@@ -11,6 +11,11 @@ class MainPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(44, 129, 157, 1),
+      appBar: AppBar(
+        title: Text("Currency Converter"),
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -51,17 +56,13 @@ class MainPage extends StatelessWidget {
               padding: EdgeInsetsGeometry.directional(start: 120, end: 120),
               child: ElevatedButton(
                 onPressed: () {},
-                style: ButtonStyle(
-                  elevation: WidgetStatePropertyAll(5),
-                  backgroundColor: WidgetStatePropertyAll(Colors.black),
-                  foregroundColor: WidgetStatePropertyAll(Colors.white),
-                  minimumSize: WidgetStatePropertyAll(
-                    Size(double.infinity, 50),
-                  ),
-                  shape: WidgetStatePropertyAll(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(40),
-                    ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 5,
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(40),
                   ),
                 ),
                 child: Text(

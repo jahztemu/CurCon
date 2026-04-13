@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+class Mainpage extends StatefulWidget {
+  const Mainpage({super.key});
+  @override
+  State<Mainpage> createState() {
+    return _MainpageState();
+  }
+}
+
+class _MainpageState extends State<Mainpage> {
+  double result = 0;
+  final TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
@@ -21,7 +31,7 @@ class MainPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '0',
+              result.toString(),
               style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
@@ -31,6 +41,7 @@ class MainPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10),
               child: TextField(
+                controller: textEditingController,
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 20,
@@ -55,7 +66,10 @@ class MainPage extends StatelessWidget {
             Padding(
               padding: EdgeInsetsGeometry.directional(start: 120, end: 120),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  result = double.parse(textEditingController.text) * 1350;
+                  setState(() {});
+                },
                 style: ElevatedButton.styleFrom(
                   elevation: 5,
                   backgroundColor: Colors.black,

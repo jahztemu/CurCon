@@ -2,3 +2,4 @@
 
 A new Flutter project.
 converting only one currency type
+fixing name bug

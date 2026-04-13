@@ -9,7 +9,8 @@ class Mainpage extends StatefulWidget {
 }
 
 class _MainpageState extends State<Mainpage> {
-  double result = 0;
+  double resultngn = 0;
+  double resultgdp = 0;
   final TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -31,7 +32,15 @@ class _MainpageState extends State<Mainpage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'NGN ${result != 0 ? result.toStringAsFixed(2) : result.toStringAsFixed(0)}',
+              'NGN ${resultngn != 0 ? resultngn.toStringAsFixed(2) : resultngn.toStringAsFixed(0)}',
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(0, 0, 0, 1),
+              ),
+            ),
+            Text(
+              'GDP ${resultgdp != 0 ? resultgdp.toStringAsFixed(2) : resultgdp.toStringAsFixed(0)}',
               style: TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
@@ -67,7 +76,8 @@ class _MainpageState extends State<Mainpage> {
               padding: EdgeInsetsGeometry.directional(start: 120, end: 120),
               child: ElevatedButton(
                 onPressed: () {
-                  result = double.parse(textEditingController.text) * 1350;
+                  resultngn = double.parse(textEditingController.text) * 1350;
+                  resultgdp = double.parse(textEditingController.text) * 0.74;
                   setState(() {});
                 },
                 style: ElevatedButton.styleFrom(
